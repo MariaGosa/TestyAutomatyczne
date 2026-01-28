@@ -143,26 +143,25 @@ Projekt wykorzystuje wbudowaną bazę H2 (in-memory) i zawiera testy jednostkowe
 
 2. Struktura projektu
 src/main/java/com/example/testy/
-│
-├── TestyApplication.java         # Klasa startowa Spring Boot
-├── controller/
-│   └── TaskController.java       # Kontroler REST dla endpointów /tasks
-├── model/
-│   └── Task.java                 # Encja JPA reprezentująca zadanie
-├── repository/
-│   └── TaskRepository.java       # Repozytorium JPA
-└── service/
+     TestyApplication.java         # Klasa startowa Spring Boot
+     
+    controller/
+    └── TaskController.java       # Kontroler REST dla endpointów /tasks
+    model/
+    └── Task.java                 # Encja JPA reprezentująca zadanie
+    repository/
+    └── TaskRepository.java       # Repozytorium JPA
+    service/
     └── TaskService.java          # Serwis zarządzający logiką biznesową
 
 src/test/java/com/example/testy/
-│
-├── controller/
-│   └── TaskControllerTest.java   # Testy kontrolera z MockMvc
-├── repository/
-│   └── TaskRepositoryTest.java   # Testy repozytorium H2
-├── service/
-│   └── TaskServiceTest.java      # Testy serwisu z mockami
-└── TestyApplicationTests.java    # Test kontekstu Spring Boot
+    controller/
+     └── TaskControllerTest.java   # Testy kontrolera z MockMvc
+    repository/
+    └── TaskRepositoryTest.java   # Testy repozytorium H2
+     service/
+    └── TaskServiceTest.java      # Testy serwisu z mockami
+    TestyApplicationTests.java    # Test kontekstu Spring Boot
 
 3. Opis klas i metod
 3.1 Klasa Task
