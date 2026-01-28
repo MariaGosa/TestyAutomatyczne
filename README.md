@@ -127,8 +127,9 @@ Chronią projekt przed błędami podczas rozwoju nowych funkcjonalności
 
 
 
-📚 Dokumentacja projektu – Task Manager API
-1. Opis projektu
+**📚 Dokumentacja projektu – Task Manager API**
+
+**1. Opis projektu**
 
 Task Manager API to prosta aplikacja REST do zarządzania zadaniami, napisana w Spring Boot.
 Aplikacja umożliwia:
@@ -141,30 +142,23 @@ Zarządzanie statusem zadania (completed)
 
 Projekt wykorzystuje wbudowaną bazę H2 (in-memory) i zawiera testy jednostkowe i integracyjne dla wszystkich warstw aplikacji.
 
-2. Struktura projektu
+**2. Struktura projektu**
 src/main/java/com/example/testy/
-     TestyApplication.java         # Klasa startowa Spring Boot
-     
-    controller/
-    └── TaskController.java       # Kontroler REST dla endpointów /tasks
-    model/
-    └── Task.java                 # Encja JPA reprezentująca zadanie
-    repository/
-    └── TaskRepository.java       # Repozytorium JPA
-    service/
-    └── TaskService.java          # Serwis zarządzający logiką biznesową
+TestyApplication.java         # Klasa startowa Spring Boot
+controller/TaskController.java       # Kontroler REST dla endpointów /tasks
+model/Task.java                 # Encja JPA reprezentująca zadanie
+repository/TaskRepository.java       # Repozytorium JPA
+service/TaskService.java          # Serwis zarządzający logiką biznesową
 
 src/test/java/com/example/testy/
-    controller/
-     └── TaskControllerTest.java   # Testy kontrolera z MockMvc
-    repository/
-    └── TaskRepositoryTest.java   # Testy repozytorium H2
-     service/
-    └── TaskServiceTest.java      # Testy serwisu z mockami
-    TestyApplicationTests.java    # Test kontekstu Spring Boot
+controller/TaskControllerTest.java   # Testy kontrolera z MockMvc
+repository/TaskRepositoryTest.java   # Testy repozytorium H2
+service/TaskServiceTest.java      # Testy serwisu z mockami
+TestyApplicationTests.java    # Test kontekstu Spring Boot
 
-3. Opis klas i metod
-3.1 Klasa Task
+**3. Opis klas i metod**
+
+**3.1 Klasa Task**
 
 Pakiet: com.example.testy.model
 
@@ -182,7 +176,7 @@ Konstruktor domyślny i parametryczny
 
 Gettery i settery dla wszystkich pól
 
-3.2 Klasa TaskRepository
+**3.2 Klasa TaskRepository**
 
 Pakiet: com.example.testy.repository
 
@@ -196,7 +190,7 @@ save(Task task) – zapisuje nowe zadanie
 
 deleteById(Long id) – usuwa zadanie po ID
 
-3.3 Klasa TaskService
+**3.3 Klasa TaskService**
 
 Pakiet: com.example.testy.service
 
@@ -208,7 +202,7 @@ List<Task> getAllTasks() – pobiera wszystkie zadania
 
 Task addTask(Task task) – dodaje nowe zadanie do repozytorium
 
-3.4 Klasa TaskController
+**3.4 Klasa TaskController**
 
 Pakiet: com.example.testy.controller
 
@@ -220,17 +214,18 @@ GET /tasks – zwraca listę wszystkich zadań
 
 POST /tasks – dodaje nowe zadanie, przyjmuje JSON { "title": "...", "completed": false }
 
-3.5 Klasa TestyApplication
+**3.5 Klasa TestyApplication**
 
 Pakiet: com.example.testy
 
 Opis: Klasa startowa Spring Boot
 
-4. Endpointy API
+**4. Endpointy API**
 Metoda	Endpoint	Opis	Body
 GET	/tasks	Pobierz wszystkie zadania	–
 POST	/tasks	Dodaj nowe zadanie	{ "title": "Zrobić projekt", "completed": false }
-5. Konfiguracja bazy danych
+
+**5. Konfiguracja bazy danych**
 
 Typ: H2 (in-memory)
 
@@ -254,11 +249,11 @@ spring.h2.console.enabled=true
 spring.h2.console.path=/h2-console
 server.port=8080
 
-6. Testy
+**6. Testy**
 
 Projekt zawiera testy dla wszystkich warstw: kontroler, serwis, repozytorium.
 
-6.1 TaskControllerTest
+**6.1 TaskControllerTest**
 
 Cel: testowanie endpointów REST z MockMvc
 
@@ -272,7 +267,7 @@ Mockowanie: TaskService jest mockowane (@MockBean)
 
 Framework: JUnit 5 + MockMvc
 
-6.2 TaskServiceTest
+**6.2 TaskServiceTest**
 
 Cel: testowanie logiki biznesowej
 
@@ -286,7 +281,7 @@ Mockowanie: TaskRepository jest mockowane (@Mock)
 
 Framework: JUnit 5 + Mockito
 
-6.3 TaskRepositoryTest
+**6.3 TaskRepositoryTest**
 
 Cel: testowanie operacji na bazie H2
 
@@ -294,14 +289,15 @@ Przykład testu: zapis i odczyt zadania (save() i findAll())
 
 Framework: JUnit 5 + Spring Data JPA (@DataJpaTest)
 
-6.4 Testy kontekstu Spring Boot
+**6.4 Testy kontekstu Spring Boot**
 
 Klasa: TestyApplicationTests
 
 Cel: sprawdzenie, czy kontekst Spring Boot w ogóle się uruchamia
 
 7. Uruchamianie testów
-7.1 W Visual Studio Code
+
+**7.1 W Visual Studio Code**
 
 Otwórz projekt w VS Code
 
@@ -309,13 +305,13 @@ Panel Test Explorer automatycznie wykrywa testy w src/test/java
 
 Kliknij Run przy klasie testowej lub Run All Tests
 
-7.2 Przez Maven
+**7.2 Przez Maven**
 ./mvnw test
 
 
 Raporty szczegółowe w target/surefire-reports
 
-8. Podsumowanie
+**8. Podsumowanie**
 
 Warstwa modelu: Task – encja JPA
 
